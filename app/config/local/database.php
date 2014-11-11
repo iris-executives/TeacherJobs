@@ -23,7 +23,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'teacherjobs',
+			'database'  => 'teacherjobsdb',
 			'username'  => 'root',
 			'password'  => 'qwertY123',
 			'charset'   => 'utf8',

@@ -3,6 +3,7 @@
 namespace TJ\Entities;
 
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
+use Eloquent;
 
 class JobAnswer extends Eloquent {
 

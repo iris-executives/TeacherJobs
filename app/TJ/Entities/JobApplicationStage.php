@@ -1,6 +1,7 @@
 <?php
 
 namespace TJ\Entities;
+use Eloquent;
 
 class JobApplicationStage extends Eloquent {
 

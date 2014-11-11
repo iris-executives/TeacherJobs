@@ -1,5 +1,7 @@
 <?php
 
+use TJ\Entities\EmployerMember;
+
 class EmployerMemberSeeder extends DatabaseSeeder
 {
   public function run()

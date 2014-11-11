@@ -1,6 +1,6 @@
 <?php
 
-use TJ\Entities;
+use TJ\Entities\Country;
 
 class CountrySeeder extends DatabaseSeeder
 {
@@ -10,12 +10,12 @@ class CountrySeeder extends DatabaseSeeder
       [
         "name" => "United Arab Emirates",
         "abreviation" => "UAE",
-        "Phone_number_code" => "00971"  
+        "phone_number_code" => "00971"  
       ]
     ];
 
     foreach ($countries as $country) {
-        Entities\Country::create($country);
+            Country::create($country);
     }
   }
 }

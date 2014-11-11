@@ -1,5 +1,7 @@
 <?php
 
+use TJ\Entities\PermissionRole;
+
 class PermissionRoleSeeder extends DatabaseSeeder
 {
   public function run()

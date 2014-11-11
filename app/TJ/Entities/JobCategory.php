@@ -1,6 +1,7 @@
 <?php
 
 namespace TJ\Entities;
+use Eloquent;
 
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 

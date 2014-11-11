@@ -1,5 +1,7 @@
 <?php
 
+use TJ\Entities\JobAlert;
+
 class JobAlertSeeder extends DatabaseSeeder
 {
   public function run()

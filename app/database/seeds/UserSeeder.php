@@ -1,5 +1,7 @@
 <?php
 
+use TJ\Entities\User;
+
 class UserSeeder extends DatabaseSeeder
 {
   public function run()

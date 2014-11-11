@@ -1,5 +1,7 @@
 <?php
 
+use TJ\Entities\JobSeeker;
+
 class JobSeekerSeeder extends DatabaseSeeder
 {
   public function run()

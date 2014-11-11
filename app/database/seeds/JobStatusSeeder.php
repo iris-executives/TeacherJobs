@@ -1,5 +1,7 @@
 <?php
 
+use TJ\Entities\JobStatus;
+
 class JobStatusSeeder extends DatabaseSeeder
 {
   public function run()

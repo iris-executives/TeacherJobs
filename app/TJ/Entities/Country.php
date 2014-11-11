@@ -3,6 +3,7 @@
 namespace TJ\Entities;
 
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
+use Eloquent;
 
 class Country extends Eloquent {
 
@@ -13,8 +14,8 @@ class Country extends Eloquent {
 	use SoftDeletingTrait;
 
 	protected $dates = ['deleted_at'];
-	protected $fillable = array('name', 'abreviation', 'Phone_number_code');
-	protected $visible = array('name', 'abreviation', 'Phone_number_code');
+	protected $fillable = array('name', 'abreviation', 'phone_number_code');
+	protected $visible = array('name', 'abreviation', 'phone_number_code');
 
 	public function jobseekers()
 	{

@@ -1,5 +1,7 @@
 <?php
 
+use TJ\Entities\EmployerMemberNote;
+
 class EmployerMemberNoteSeeder extends DatabaseSeeder
 {
   public function run()

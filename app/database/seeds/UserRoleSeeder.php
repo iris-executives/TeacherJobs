@@ -1,5 +1,7 @@
 <?php
 
+use TJ\Entities\UserRole;
+
 class UserRoleSeeder extends DatabaseSeeder
 {
   public function run()

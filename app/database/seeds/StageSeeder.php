@@ -1,5 +1,7 @@
 <?php
 
+use TJ\Entities\Stage;
+
 class StageSeeder extends DatabaseSeeder
 {
   public function run()

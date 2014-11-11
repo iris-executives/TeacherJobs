@@ -1,6 +1,8 @@
 <?php
 
-class EmployerMemberSeeder extends DatabaseSeeder
+use TJ\Entities\EmployerMemberTask;
+
+class EmployerMemberTaskSeeder extends DatabaseSeeder
 {
   public function run()
   {
@@ -15,7 +17,7 @@ class EmployerMemberSeeder extends DatabaseSeeder
     ];
 
     foreach ($members as $member) {
-      EmployerMember::create($member);
+      EmployerMemberTask::create($member);
     }
   }
 }

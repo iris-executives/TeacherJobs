@@ -13,7 +13,7 @@ class EmployerSeeder extends DatabaseSeeder
         "phone"    => "0411112233",
         "address" => "test1",
         "city" => "Dubai", 
-        "Pobox" => "test1",
+        "pobox" => "test1",
         "logo" => "//Path/to/logo"
       ]
     ];

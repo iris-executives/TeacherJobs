@@ -14,7 +14,7 @@ class CreateEmployersTable extends Migration {
 			$table->string('phone', 20);
 			$table->string('address', 50)->nullable();
 			$table->string('city', 20);
-			$table->integer('Pobox')->nullable();
+			$table->integer('pobox')->nullable();
 			$table->string('logo', 200);
 			$table->timestamps();
 			$table->softDeletes();

@@ -8,7 +8,7 @@ class JobAlertSeeder extends DatabaseSeeder
   {
     $job_alerts = [
       [
-        "user_id" => "1",
+        "user_id" => 1,
         "location" => "dubai"  
       ]
     ];

@@ -9,27 +9,29 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		Eloquent::unguard();
-
+		Eloquent::unguard();              
+                DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 		$this->call("CountrySeeder");
+                $this->call("UserSeeder");
                 $this->call("EmployerSeeder");
+                $this->call("JobTypeSeeder");
+                $this->call("JobStatusSeeder");
+                $this->call("JobCategorySeeder");
+                $this->call("EmployerSeeder");
+                $this->call("JobSeekerSeeder");
+                $this->call("StageSeeder"); 
+                $this->call("JobPostSeeder");
+                $this->call("JobApplicationSeeder");
+                $this->call("JobQuestionSeeder"); 
+                $this->call("JobApplicationStageSeeder");
+                $this->call("JobAnswerSeeder");
+                $this->call("PermissionSeeder");
+                $this->call("PermissionRoleSeeder");
+                $this->call("UserRoleSeeder");
+                $this->call("JobAlertSeeder");
                 $this->call("EmployerMemberNoteSeeder");
                 $this->call("EmployerMemberTaskSeeder");
-                $this->call("EmployerSeeder");
-                $this->call("JobAlertSeeder");
-                $this->call("JobAnswerSeeder");
-                $this->call("JobApplicationSeeder");
-                $this->call("JobApplicationStageSeeder");
-                $this->call("JobCategorySeeder");
-                $this->call("JobPostSeeder");
-                $this->call("JobQuestionSeeder");
-                $this->call("JobSeekerSeeder");
-                $this->call("JobStatusSeeder");
-                $this->call("JobTypeSeeder");
-                $this->call("PermissionRoleSeeder");
-                $this->call("PermissionSeeder");
-                $this->call("StageSeeder");
-                $this->call("UserRoleSeeder");
-                $this->call("UserSeeder");
+                DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+                
 	}
 }

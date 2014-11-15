@@ -22,9 +22,33 @@ class EmployerTest extends TestCase {
                                 "first_name" => "test1",
                                 "surname" => "test1"  
                               ]);
-        $member->employers()->save($employer);
         
-        
+        $member->employers()->save($employer);   
+    }
+    
+    public function test_creating_member()
+    {
+        $employer = Employer::create([  "name" => "name test",
+                                        "description" => "desc test",
+                                        "phone"    => "0411112233",
+                                        "address" => "address test",
+                                        "city" => "Dubai", 
+                                        "pobox" => "pobox test",
+                                        "logo" => "//Path/to/logo"
+                                      ]);
+        $user = User::create(["username" => "test1",
+                                "password" => Hash::make("test1"),
+                                "email"    => "test1@domain.com",
+                                "first_name" => "test1",
+                                "surname" => "test1"  
+                              ]);
+
+        $employer->members()->save($user);
+
+        $savedEmployer = Employer::first();
+        $savedMember = $savedEmployer->members->first();
+
+        $this->assertEquals($user->getKey(), $savedMember->getKey());
     }
 
    

@@ -10,10 +10,10 @@ class EmployerMemberNoteSeeder extends DatabaseSeeder
       [
         "title" => "test1",
         "content" => "test",
-        "job_application_id"    => "1",
-        "stage_id" => "1",
-        "member_id" => "1", 
-        "is_private" => "0"
+        "job_application_id"    => 1,
+        "stage_id" => 1,
+        "member_id" => 1, 
+        "is_private" => 0
       ]
     ];
 

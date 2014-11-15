@@ -23,20 +23,4 @@ class User extends Eloquent {
     {
             return $this->hasMany('JobAlert');
     }
-
-    public function create($username, $email, $first_name, $surname, $user_role_id)
-    {
-        return $this->user->create(compact('username', 'email', 'first_name', 'surname', 'user_role_id'));
-    }
-    
-    public function update($id, $username, $email, $first_name, $surname, $user_role_id)
-    {
-        return $this->user->where($this->user->getKeyName(), $id)->update(compact('username', 'email', 'first_name', 'surname', 'user_role_id'));
-    }
-    
-    public function delete($id)
-    {
-        return $this->user->where($this->user->getKeyName(), $id)->delete();
-    }
-
 }

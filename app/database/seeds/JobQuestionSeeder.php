@@ -8,8 +8,7 @@ class JobQuestionSeeder extends DatabaseSeeder
   {
     $questions = [
       [
-        "content" => "test1",
-        "job_qustion_id" => "1"  
+        "content" => "test1"
       ]
     ];
 

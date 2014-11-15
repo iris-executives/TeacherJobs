@@ -1,4 +1,4 @@
-<?php namespace Teacherjobs;
+<?php namespace TJ;
 
 use App;
 
@@ -14,8 +14,15 @@ class TeacherjobsServiceProvider extends ServiceProvider {
      */
     public function register()
     {      
-        App::bind('Teacherjobs\Repositories\Contracts\UserRepositoryInterface', 'Teacherjobs\Repositories\UserRepository');
+        App::bind('Illuminate\Auth\UserInterface', 'TJ\Entities\User');
+        App::bind('TJ\Contracts\EmployerInterface', 'TJ\Entities\Employer');
+        App::bind('TJ\Contracts\EmployerMemeberInterface', 'TJ\Entities\EmployerMember');
+        App::bind('TJ\Contracts\JobseekerInterface', 'TJ\Entities\Jobseeker');
         
-        App::bind('Illuminate\Auth\UserInterface', 'Teacherjobs\Entities\User');
+        App::bind('TJ\Repositories\Contracts\UserRepositoryInterface', 'TJ\Repositories\UserRepository');
+        App::bind('TJ\Repositories\Contracts\EmployerRepositoryInterface', 'TJ\Repositories\EmployerRepository');
+        App::bind('TJ\Repositories\Contracts\EmployerMemberRepositoryInterface', 'TJ\Repositories\EmployerMemberRepository');
+        App::bind('TJ\Repositories\Contracts\JobseekerRepositoryInterface', 'TJ\Repositories\JobseekerRepository');
+        
     }
 }

@@ -9,8 +9,8 @@ class CreateForeignKeys extends Migration {
 	{
 		Schema::table('users', function(Blueprint $table) {
 			$table->foreign('user_role_id')->references('id')->on('user_roles')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('no action')
+						->onUpdate('no action');
 		});
 		Schema::table('permission_role', function(Blueprint $table) {
 			$table->foreign('role_id')->references('id')->on('user_roles')
@@ -24,8 +24,8 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('jobseekers', function(Blueprint $table) {
 			$table->foreign('user_id')->references('id')->on('users')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('no action')
+						->onUpdate('no action');
 		});
 		Schema::table('jobseekers', function(Blueprint $table) {
 			$table->foreign('country_id')->references('id')->on('countries')
@@ -54,13 +54,13 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('employer_members', function(Blueprint $table) {
 			$table->foreign('employer_id')->references('id')->on('employers')
-						->onDelete('restrict')
-						->onUpdate('restrict');
+						->onDelete('no action')
+						->onUpdate('no action');
 		});
 		Schema::table('employer_members', function(Blueprint $table) {
 			$table->foreign('user_id')->references('id')->on('users')
-						->onDelete('restrict')
-						->onUpdate('restrict');
+						->onDelete('no action')
+						->onUpdate('no action');
 		});
 		Schema::table('employer_members_notes', function(Blueprint $table) {
 			$table->foreign('job_application_id')->references('id')->on('job_application_stage')
@@ -99,8 +99,8 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('job_posts', function(Blueprint $table) {
 			$table->foreign('type_id')->references('id')->on('job_types')
-						->onDelete('restrict')
-						->onUpdate('restrict');
+						->onDelete('no action')
+						->onUpdate('no action');
 		});
 		Schema::table('job_questions', function(Blueprint $table) {
 			$table->foreign('job_post_id')->references('id')->on('job_posts')
@@ -109,13 +109,13 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('job_alerts', function(Blueprint $table) {
 			$table->foreign('user_id')->references('id')->on('users')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('no action')
+						->onUpdate('no action');
 		});
 		Schema::table('stages', function(Blueprint $table) {
 			$table->foreign('parent_id')->references('id')->on('stages')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('no action')
+						->onUpdate('no action');
 		});
 		Schema::table('job_application_stage', function(Blueprint $table) {
 			$table->foreign('job_application_id')->references('id')->on('job_applications')
@@ -124,8 +124,8 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('job_application_stage', function(Blueprint $table) {
 			$table->foreign('stage_id')->references('id')->on('stages')
-						->onDelete('restrict')
-						->onUpdate('restrict');
+						->onDelete('no action')
+						->onUpdate('no action');
 		});
 	}
 

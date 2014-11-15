@@ -8,8 +8,8 @@ class JobApplicationSeeder extends DatabaseSeeder
   {
     $job_applications = [
       [
-        "job_post_id" => "1",
-        "jobseeker_id" => "1"  
+        "job_post_id" => 1,
+        "jobseeker_id" => 1  
       ]
     ];
 

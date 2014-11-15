@@ -21,8 +21,8 @@
 			{{ Form::text('city') }}
 		</li>
 		<li>
-			{{ Form::label('Pobox', 'Pobox:') }}
-			{{ Form::text('Pobox') }}
+			{{ Form::label('pobox', 'pobox:') }}
+			{{ Form::text('pobox') }}
 		</li>
 		<li>
 			{{ Form::label('logo', 'Logo:') }}

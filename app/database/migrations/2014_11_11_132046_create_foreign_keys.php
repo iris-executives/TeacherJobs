@@ -9,17 +9,17 @@ class CreateForeignKeys extends Migration {
 	{
 		Schema::table('users', function(Blueprint $table) {
 			$table->foreign('user_role_id')->references('id')->on('user_roles')
-						->onDelete('no action')
+						->onDelete('cascade')
 						->onUpdate('no action');
 		});
 		Schema::table('permission_role', function(Blueprint $table) {
 			$table->foreign('role_id')->references('id')->on('user_roles')
-						->onDelete('no action')
+						->onDelete('cascade')
 						->onUpdate('no action');
 		});
 		Schema::table('permission_role', function(Blueprint $table) {
 			$table->foreign('permission_id')->references('id')->on('permissions')
-						->onDelete('no action')
+						->onDelete('cascade')
 						->onUpdate('no action');
 		});
 		Schema::table('jobseekers', function(Blueprint $table) {
@@ -54,17 +54,17 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('employer_members', function(Blueprint $table) {
 			$table->foreign('employer_id')->references('id')->on('employers')
-						->onDelete('no action')
+						->onDelete('cascade')
 						->onUpdate('no action');
 		});
 		Schema::table('employer_members', function(Blueprint $table) {
 			$table->foreign('user_id')->references('id')->on('users')
-						->onDelete('no action')
+						->onDelete('cascade')
 						->onUpdate('no action');
 		});
 		Schema::table('employer_members_notes', function(Blueprint $table) {
 			$table->foreign('job_application_id')->references('id')->on('job_application_stage')
-						->onDelete('no action')
+						->onDelete('cascade')
 						->onUpdate('no action');
 		});
 		Schema::table('employer_members_notes', function(Blueprint $table) {
@@ -74,17 +74,17 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('employer_members_notes', function(Blueprint $table) {
 			$table->foreign('member_id')->references('id')->on('employer_members')
-						->onDelete('no action')
+						->onDelete('cascade')
 						->onUpdate('no action');
 		});
 		Schema::table('employer_members_tasks', function(Blueprint $table) {
 			$table->foreign('user_assigned_by')->references('id')->on('employer_members')
-						->onDelete('no action')
+						->onDelete('cascade')
 						->onUpdate('no action');
 		});
 		Schema::table('employer_members_tasks', function(Blueprint $table) {
 			$table->foreign('user_assigned_to')->references('id')->on('employer_members')
-						->onDelete('no action')
+						->onDelete('cascade')
 						->onUpdate('no action');
 		});
 		Schema::table('job_posts', function(Blueprint $table) {

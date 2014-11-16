@@ -20,12 +20,12 @@ class UserRole extends Eloquent {
 
 	public function users()
 	{
-		return $this->hasMany('User');
+		return $this->hasMany('TJ\Entities\User');
 	}
 
 	public function permissions()
 	{
-		return $this->hasMany('Permission', 'permission_id');
+		return $this->hasMany('TJ\Entities\Permission', 'permission_id');
 	}
 
 }

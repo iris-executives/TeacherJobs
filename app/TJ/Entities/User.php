@@ -14,13 +14,12 @@ class User extends Eloquent {
     use SoftDeletingTrait;
 
     protected $dates = ['deleted_at'];
-    protected $guarded = array('password');
-    protected $fillable = array('username', 'email', 'first_name', 'surname', 'user_role_id');
-    protected $visible = array('username', 'email', 'first_name', 'surname', 'user_role_id');
-    protected $hidden = array('password');
+    protected $fillable = array('username', 'email', 'password', 'first_name', 'surname', 'user_role_id');
+    protected $visible = array('username', 'email', 'password', 'first_name', 'surname', 'user_role_id');
+
 
     public function job_alerts()
     {
-            return $this->hasMany('JobAlert');
+            return $this->hasMany('TJ\Entities\JobAlert');
     }
 }

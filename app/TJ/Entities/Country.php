@@ -19,7 +19,7 @@ class Country extends Eloquent {
 
 	public function jobseekers()
 	{
-		return $this->hasMany('JobSeeker');
+		return $this->hasMany('TJ\Entities\JobSeeker');
 	}
 
 }

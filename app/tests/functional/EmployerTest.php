@@ -6,6 +6,17 @@ use TJ\Entities\EmployerMember;
 
 class EmployerTest extends TestCase {
 
+    
+    
+    /**
+    * Default preparation for each test
+    */
+    public function setUp()
+    {  
+        parent::setUp();
+        Artisan::call('migrate');
+    }
+    
     public function test_creating_employer()
     { 
         $employer = Employer::create([  "name" => "name test",
@@ -16,14 +27,11 @@ class EmployerTest extends TestCase {
                                         "pobox" => "pobox test",
                                         "logo" => "//Path/to/logo"
                                       ]);
-        $member = User::create(["username" => "test1",
-                                "password" => Hash::make("test1"),
-                                "email"    => "test1@domain.com",
-                                "first_name" => "test1",
-                                "surname" => "test1"  
-                              ]);
         
-        $member->employers()->save($employer);   
+        $savedEmployer = Employer::first();
+        
+        $this->assertEquals($employer->getKey(), $savedEmployer->getKey());
+        
     }
     
     public function test_creating_member()
@@ -36,14 +44,19 @@ class EmployerTest extends TestCase {
                                         "pobox" => "pobox test",
                                         "logo" => "//Path/to/logo"
                                       ]);
-        $user = User::create(["username" => "test1",
-                                "password" => Hash::make("test1"),
+        $user = User::create([  "username" => "test1",
+                                "password" => "password",
                                 "email"    => "test1@domain.com",
                                 "first_name" => "test1",
-                                "surname" => "test1"  
+                                "surname" => "test1",
+                                "user_role_id" => 1
                               ]);
+        
+        $member = EmployerMember::create([  "employer_id" => 1,
+                                            "user_id" => 1
+                                          ]);
 
-        $employer->members()->save($user);
+        $employer->members()->save($member);
 
         $savedEmployer = Employer::first();
         $savedMember = $savedEmployer->members->first();
@@ -55,9 +68,9 @@ class EmployerTest extends TestCase {
     /**
      * @expectedException TJ\Exceptions\InvalidEmployerData
      */
-    public function test_fails_creating_employer_with_missing_data()
-    {
+    //public function test_fails_creating_employer_with_missing_data()
+    //{
        //
-    }
+    //}
 }
 

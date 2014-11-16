@@ -15,14 +15,14 @@ class UserRepository implements Contracts\UserRepositoryInterface {
         $this->user = $user;
     }
     
-    public function create($username, $email, $first_name, $surname, $user_role_id)
+    public function create($username, $email, $password, $first_name, $surname, $user_role_id)
     {
-        return $this->user->create(compact('username', 'email', 'first_name', 'surname', 'user_role_id'));
+        return $this->user->create(compact('username', 'email', 'password', 'first_name', 'surname', 'user_role_id'));
     }
     
-    public function update($id, $username, $email, $first_name, $surname, $user_role_id)
+    public function update($id, $username, $email, $password, $first_name, $surname, $user_role_id)
     {
-        return $this->user->where($this->user->getKeyName(), $id)->update(compact('username', 'email', 'first_name', 'surname', 'user_role_id'));
+        return $this->user->where($this->user->getKeyName(), $id)->update(compact('username', 'email', 'password', 'first_name', 'surname', 'user_role_id'));
     }
     
     public function remove($id)

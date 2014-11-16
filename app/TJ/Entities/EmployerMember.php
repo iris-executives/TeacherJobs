@@ -14,25 +14,31 @@ class EmployerMember extends Eloquent {
 	use SoftDeletingTrait;
 
 	protected $dates = ['deleted_at'];
+        protected $fillable = array('employer_id', 'user_id');
 
-	public function tasks()
+	public function employers()
 	{
-		return $this->hasMany('EmployerMemberTask');
+		return $this->belongsTo('TJ\Entities\Employer', 'employer_id');
+	}
+        
+        public function tasks()
+	{
+		return $this->hasMany('TJ\Entities\EmployerMemberTask');
 	}
 
 	public function notes()
 	{
-		return $this->hasMany('EmployerMemberNote');
+		return $this->hasMany('TJ\Entities\EmployerMemberNote');
 	}
 
 	public function user()
 	{
-		return $this->belongsTo('User', 'user_id');
+		return $this->belongsTo('TJ\Entities\User', 'user_id');
 	}
 
 	public function job_posts()
 	{
-		return $this->hasMany('JobPost');
+		return $this->hasMany('TJ\Entities\JobPost');
 	}
 
 }

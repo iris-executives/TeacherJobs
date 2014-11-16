@@ -19,27 +19,27 @@ class JobPost extends Eloquent {
 
 	public function categories()
 	{
-		return $this->hasMany('JobCategory');
+		return $this->hasMany('TJ\Entities\JobCategory');
 	}
 
 	public function types()
 	{
-		return $this->hasMany('JobType');
+		return $this->hasMany('TJ\Entities\JobType');
 	}
 
 	public function status()
 	{
-		return $this->hasOne('JobStatus');
+		return $this->hasOne('TJ\Entities\JobStatus');
 	}
 
 	public function job_questions()
 	{
-		return $this->hasMany('JobQuestion');
+		return $this->hasMany('TJ\Entities\JobQuestion');
 	}
 
 	public function job_applications()
 	{
-		return $this->hasMany('JobApplication');
+		return $this->hasMany('TJ\Entities\JobApplication');
 	}
 
 }

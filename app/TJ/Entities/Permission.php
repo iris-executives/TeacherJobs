@@ -21,7 +21,7 @@ class Permission extends Eloquent {
 
 	public function roles()
 	{
-		return $this->hasMany('UserRole', 'user_role_id');
+		return $this->hasMany('TJ\Entities\UserRole', 'user_role_id');
 	}
 
 }

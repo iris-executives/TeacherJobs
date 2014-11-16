@@ -19,6 +19,6 @@ class Employer extends Eloquent {
 
     public function members()
     {
-            return $this->hasMany('EmployerMember');
+            return $this->hasMany('TJ\Entities\EmployerMember');
     }
 }

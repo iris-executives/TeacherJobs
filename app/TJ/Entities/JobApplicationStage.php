@@ -15,7 +15,7 @@ class JobApplicationStage extends Eloquent {
 
 	public function notes()
 	{
-		return $this->hasMany('EmployerMemberNote');
+		return $this->hasMany('TJ\Entities\EmployerMemberNote');
 	}
 
 }

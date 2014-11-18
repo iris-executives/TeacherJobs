@@ -31,7 +31,8 @@ class JobPostTest extends TestCase {
                                             "user_id" => 1
                                           ]);
         
-        $job = JobPost::create([ "is_uae_only" => 0,
+        $job = JobPost::create([ "title" => "test job",
+                                 "is_uae_only" => 0,
                                  "description" => "desc test",
                                  "min_education_level_required"    => "level 1",
                                  "min_certification" => "vertif 1",
@@ -41,7 +42,8 @@ class JobPostTest extends TestCase {
                                  "work_timing" => "9-5",
                                  "salary"    => "15k",
                                  "employer_member_id" => 1,
-                                 "status_id" => 1, 
+                                 "status_id" => 1,
+                                 "carwgory_id" => 1,
                                  "type_id" => 1]);
        
         $member->jobPosts()->save($job);

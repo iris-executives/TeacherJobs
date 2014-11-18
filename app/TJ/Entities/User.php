@@ -18,7 +18,7 @@ class User extends Eloquent {
     protected $visible = array('username', 'email', 'password', 'first_name', 'surname', 'user_role_id');
 
 
-    public function job_alerts()
+    public function jobAlerts()
     {
             return $this->hasMany('TJ\Entities\JobAlert');
     }

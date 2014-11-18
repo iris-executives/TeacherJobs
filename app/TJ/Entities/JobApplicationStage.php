@@ -17,5 +17,14 @@ class JobApplicationStage extends Eloquent {
 	{
 		return $this->hasMany('TJ\Entities\EmployerMemberNote');
 	}
-
+        
+        public function jobApplications()
+	{
+		return $this->BelongsTo('TJ\Entities\JobApplicationStage');
+	}
+        
+        public function jobStages()
+	{
+		return $this->BelongsTo('TJ\Entities\JobApplicationStage');
+	}
 }

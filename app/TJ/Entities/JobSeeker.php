@@ -19,12 +19,22 @@ class JobSeeker extends Eloquent {
 
 	public function user()
 	{
-		return $this->belongsTo('User', 'user_id');
+		return $this->belongsTo('TJ\Entities\User');
+	}
+        
+        public function country()
+	{
+		return $this->belongsTo('TJ\Entities\Country');
 	}
 
-	public function job_applications()
+	public function jobApplications()
 	{
-		return $this->hasMany('JobApplication');
+		return $this->hasMany('TJ\Entities\JobApplication');
 	}
+        
+        public function applyToJob()
+        {
+                //
+        }        
 
 }

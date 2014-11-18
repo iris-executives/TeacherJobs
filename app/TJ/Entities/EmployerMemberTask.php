@@ -20,12 +20,11 @@ class EmployerMemberTask extends Eloquent {
         
         public function assigners()
 	{
-		return $this->belongsTo('TJ\Entities\EmployerMember', 'user_assigned_by');
+		return $this->hasOne('TJ\Entities\EmployerMember', 'user_assigned_by');
 	}
         
         public function assagnees()
 	{
-		return $this->belongsTo('TJ\Entities\EmployerMember', 'user_assigned_to');
-	}
-
+		return $this->hasOne('TJ\Entities\EmployerMember', 'user_assigned_to');
+	}                   
 }

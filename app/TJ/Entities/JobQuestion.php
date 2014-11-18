@@ -19,7 +19,12 @@ class JobQuestion extends Eloquent {
 
 	public function answer()
 	{
-		return $this->hasOne('TJ\Entities\JobAnswer');
+		return $this->hasMany('TJ\Entities\JobAnswer');
+	}
+        
+        public function jobPost()
+	{
+		return $this->hasOne('TJ\Entities\JobPost');
 	}
 
 }

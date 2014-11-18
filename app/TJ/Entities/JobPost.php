@@ -41,5 +41,10 @@ class JobPost extends Eloquent {
 	{
 		return $this->hasMany('TJ\Entities\JobApplication');
 	}
+        
+        public function member()
+	{
+		return $this->belongsTo('TJ\Entities\EmployerMember');
+	}
 
 }

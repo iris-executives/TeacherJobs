@@ -18,5 +18,20 @@ class EmployerMemberNote extends Eloquent {
 	protected $fillable = array('title', 'content', 'is_private');
 	protected $visible = array('title', 'content', 'is_private');
 	protected $hidden = array('job_application_id', 'stage_id', 'member_id');
+        
+        public function member()
+	{
+		return $this->belongsTo('TJ\Entities\EmployerMember');
+	}
+        
+        public function stage()
+	{
+		return $this->belongsTo('TJ\Entities\Stage');
+	}
+        
+        public function jobApplication()
+	{
+		return $this->belongsTo('TJ\Entities\JobApplication');
+	}
 
 }

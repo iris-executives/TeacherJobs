@@ -18,5 +18,14 @@ class JobAnswer extends Eloquent {
 	protected $fillable = array('content');
 	protected $visible = array('content');
 	protected $hidden = array('job_application_id', 'job_question_id');
-
+        
+        public function question()
+	{
+		return $this->belongsTo('TJ\Entities\JobQuestion');
+	}
+        
+        public function jobApplication()
+	{
+		return $this->belongsTo('TJ\Entities\JobApplication');
+	}  
 }

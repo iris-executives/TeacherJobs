@@ -22,9 +22,8 @@ class Stage extends Eloquent {
 		return $this->hasOne('TJ\Entities\Stage');
 	}
 
-	public function job_applications()
+	public function jobApplications()
 	{
-		return $this->hasMany('TJ\Entities\JobApplicationStage')->withPivot('job_application', 'stage_id');
+		return $this->hasMany('TJ\Entities\JobApplicationStage', 'Job_application_id');
 	}
-
 }

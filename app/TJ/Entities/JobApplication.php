@@ -19,14 +19,19 @@ class JobApplication extends Eloquent {
 	protected $visible = array('job_post_id');
 	protected $hidden = array('jobseeker_id');
 
-	public function ansers()
+	public function answers()
 	{
-		return $this->hasMany('JobAnswer');
+		return $this->hasMany('TJ\Entities\JobAnswer');
 	}
 
 	public function stages()
 	{
-		return $this->hasMany('JobApplicationStage');
+		return $this->HasMany('TJ\Entities\JobApplicationStage', 'stage_id');
+	}
+        
+        public function jobSeeker()
+	{
+		return $this->belongsTo('TJ\Entities\JobSeeker');
 	}
 
 }

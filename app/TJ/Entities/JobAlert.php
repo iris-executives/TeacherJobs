@@ -16,5 +16,10 @@ class JobAlert extends Eloquent {
 	protected $dates = ['deleted_at'];
 	protected $fillable = array('location');
 	protected $visible = array('location');
+        
+        public function user()
+	{
+		return $this->belongsTo('TJ\Entities\User');
+	}
 
 }

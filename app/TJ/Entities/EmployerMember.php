@@ -18,7 +18,7 @@ class EmployerMember extends Eloquent {
 
 	public function employers()
 	{
-		return $this->belongsTo('TJ\Entities\Employer', 'employer_id');
+		return $this->belongsTo('TJ\Entities\Employer');
 	}
         
         public function tasks()
@@ -33,10 +33,10 @@ class EmployerMember extends Eloquent {
 
 	public function user()
 	{
-		return $this->belongsTo('TJ\Entities\User', 'user_id');
+		return $this->belongsTo('TJ\Entities\User');
 	}
 
-	public function job_posts()
+	public function jobPosts()
 	{
 		return $this->hasMany('TJ\Entities\JobPost');
 	}

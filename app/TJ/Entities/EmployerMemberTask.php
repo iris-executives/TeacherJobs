@@ -14,9 +14,8 @@ class EmployerMemberTask extends Eloquent {
 	use SoftDeletingTrait;
 
 	protected $dates = ['deleted_at'];
-	protected $guarded = array('user_assigned_by', 'user_assigned_to');
-	protected $fillable = array('title', 'content', 'deadline');
-	protected $visible = array('title', 'content', 'deadline');
+	protected $fillable = array('title', 'content', 'deadline', 'user_assigned_by', 'user_assigned_to');
+
         
         public function assigners()
 	{

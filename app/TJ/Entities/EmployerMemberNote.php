@@ -14,10 +14,7 @@ class EmployerMemberNote extends Eloquent {
 	use SoftDeletingTrait;
 
 	protected $dates = ['deleted_at'];
-	protected $guarded = array('job_application_id', 'stage_id', 'member_id');
-	protected $fillable = array('title', 'content', 'is_private');
-	protected $visible = array('title', 'content', 'is_private');
-	protected $hidden = array('job_application_id', 'stage_id', 'member_id');
+	protected $fillable = array('title', 'content', 'is_private', 'job_application_id', 'stage_id', 'member_id');
         
         public function member()
 	{

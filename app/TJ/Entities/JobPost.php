@@ -14,8 +14,7 @@ class JobPost extends Eloquent {
 	use SoftDeletingTrait;
 
 	protected $dates = ['deleted_at'];
-	protected $fillable = array('title', 'is_uae_only', 'description', 'min_education_level_required', 'min_certification', 'min_years_experience', 'location', 'contract_type', 'work_timing', 'salary');
-	protected $visible = array('title', 'is_uae_only', 'description', 'min_education_level_required', 'min_certification', 'min_years_experience', 'location', 'contract_type', 'work_timing', 'salary');
+	protected $fillable = array('title', 'is_uae_only', 'description', 'min_education_level_required', 'min_certification', 'min_years_experience', 'location', 'contract_type', 'work_timing', 'salary', 'employer_member_id', 'status_id', 'category_id', 'type_id');
 
 	public function categories()
 	{
@@ -32,12 +31,12 @@ class JobPost extends Eloquent {
 		return $this->hasOne('TJ\Entities\JobStatus');
 	}
 
-	public function job_questions()
+	public function jobQuestions()
 	{
 		return $this->hasMany('TJ\Entities\JobQuestion');
 	}
 
-	public function job_applications()
+	public function jobApplications()
 	{
 		return $this->hasMany('TJ\Entities\JobApplication');
 	}

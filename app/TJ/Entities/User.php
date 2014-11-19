@@ -15,8 +15,6 @@ class User extends Eloquent {
 
     protected $dates = ['deleted_at'];
     protected $fillable = array('username', 'email', 'password', 'first_name', 'surname', 'user_role_id');
-    protected $visible = array('username', 'email', 'password', 'first_name', 'surname', 'user_role_id');
-
 
     public function jobAlerts()
     {

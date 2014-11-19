@@ -14,9 +14,7 @@ class UserRole extends Eloquent {
 	use SoftDeletingTrait;
 
 	protected $dates = ['deleted_at'];
-	protected $guarded = array('slug');
-	protected $fillable = array('title');
-	protected $visible = array('title');
+	protected $fillable = array('title', 'slug');
 
 	public function users()
 	{

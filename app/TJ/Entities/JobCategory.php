@@ -15,11 +15,10 @@ class JobCategory extends Eloquent {
 
 	protected $dates = ['deleted_at'];
 	protected $fillable = array('name');
-	protected $visible = array('name');
         
         public function jobPosts()
 	{
-		return $this->hasMany('TJ\Entities\JobPost');
+		return $this->hasMany('TJ\Entities\JobPost', 'category_id');
 	}
 
 }

@@ -82,4 +82,9 @@ class JobApplicationTest extends TestCase {
 
         $this->assertEquals($jobApplication->getKey(), $savedJobApplication->getKey());
     }
+    
+    public function test_assigning_stage_to_job_application()
+    {
+        //
+    }
 }

@@ -14,10 +14,7 @@ class JobAnswer extends Eloquent {
 	use SoftDeletingTrait;
 
 	protected $dates = ['deleted_at'];
-	protected $guarded = array('job_application_id', 'job_question_id');
-	protected $fillable = array('content');
-	protected $visible = array('content');
-	protected $hidden = array('job_application_id', 'job_question_id');
+	protected $fillable = array('content','job_application_id', 'job_question_id');
         
         public function question()
 	{

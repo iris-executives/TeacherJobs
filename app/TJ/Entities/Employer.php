@@ -15,7 +15,6 @@ class Employer extends Eloquent {
 
     protected $dates = ['deleted_at'];
     protected $fillable = array('name', 'description', 'phone', 'address', 'city', 'pobox', 'logo');
-    protected $visible = array('name', 'description', 'phone', 'address', 'city', 'pobox', 'logo');
 
     public function members()
     {

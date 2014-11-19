@@ -15,9 +15,8 @@ class Stage extends Eloquent {
 
 	protected $dates = ['deleted_at'];
 	protected $fillable = array('name', 'parent_id');
-	protected $visible = array('name', 'parent_id');
 
-	public function parent()
+	public function parentStage()
 	{
 		return $this->hasOne('TJ\Entities\Stage');
 	}

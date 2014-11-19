@@ -6,6 +6,11 @@
 	"require": {
 		"laravel/framework": "4.2.*"
 	},
+        "require-dev": {
+		"phpunit/phpunit": "4.3.*",
+                "mockery/mockery": "dev-master@dev",
+                "bca/laravel-inspect" : "dev-master"
+	},
 	"autoload": {
                 "psr-0": {
                     "TJ\\": "app/"

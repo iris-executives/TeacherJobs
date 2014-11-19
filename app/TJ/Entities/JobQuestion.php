@@ -15,7 +15,6 @@ class JobQuestion extends Eloquent {
 
 	protected $dates = ['deleted_at'];
 	protected $fillable = array('content', 'job_post_id');
-	protected $visible = array('content', 'job_post_id');
 
 	public function answer()
 	{

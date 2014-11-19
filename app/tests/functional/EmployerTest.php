@@ -3,6 +3,8 @@
 use TJ\Entities\User;
 use TJ\Entities\Employer;
 use TJ\Entities\EmployerMember;
+use TJ\Entities\EmployerMemberNote;
+use TJ\Entities\EmployerMemberTask;
 
 class EmployerTest extends TestCase {
 
@@ -63,7 +65,52 @@ class EmployerTest extends TestCase {
 
         $this->assertEquals($user->getKey(), $savedMember->getKey());
     }
+    
+    public function test_creating_member_note()
+    {
+        $note = EmployerMemberNote::create([    "title" => "test1",
+                                                "content" => "content1",
+                                                "job_application_id"    => 1,
+                                                "stage_id" => 1,
+                                                "member_id" => 1,
+                                                "is_private" => 1
+                                              ]);
+        
+        
+        $member = EmployerMember::create([  "employer_id" => 1,
+                                            "user_id" => 1
+                                          ]);
+        
+        $member->notes()->save($note);
 
+        $savedNote = $member->notes->first();
+
+        $this->assertEquals($note->getKey(), $savedNote->getKey());
+        
+        
+    }
+    
+    public function test_creating_member_task()
+    {
+        $task = EmployerMemberTask::create([    "title" => "test1",
+                                                "content" => "content1",
+                                                "deadline"    => '11/11/2014',
+                                                "user_assigned_by" => 1,
+                                                "user_assigned_to" => 2
+                                              ]);
+        
+        $member = EmployerMember::create([  "employer_id" => 1,
+                                            "user_id" => 1
+                                          ]);
+        
+        //$member->tasksAssignedBySelf()->save($task);
+        
+        $member->tasksAssignedToOthers()->save($task);
+
+        $savedTask = $member->tasksAssignedBySelf->first();
+
+        $this->assertEquals($task->getKey(), $savedTask->getKey());
+    }
    
     /**
      * @expectedException TJ\Exceptions\InvalidEmployerData

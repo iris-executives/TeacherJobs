@@ -16,19 +16,24 @@ class EmployerMember extends Eloquent {
 	protected $dates = ['deleted_at'];
         protected $fillable = array('employer_id', 'user_id');
 
-	public function employers()
+	public function employer()
 	{
 		return $this->belongsTo('TJ\Entities\Employer');
 	}
         
-        public function tasks()
+        public function tasksAssignedBySelf()
 	{
-		return $this->hasMany('TJ\Entities\EmployerMemberTask');
+		return $this->hasMany('TJ\Entities\EmployerMemberTask', 'user_assigned_by');
+	}
+        
+        public function tasksAssignedToOthers()
+	{
+		return $this->hasMany('TJ\Entities\EmployerMemberTask', 'user_assigned_to');
 	}
 
 	public function notes()
 	{
-		return $this->hasMany('TJ\Entities\EmployerMemberNote');
+		return $this->hasMany('TJ\Entities\EmployerMemberNote', 'member_id');
 	}
 
 	public function user()

@@ -21,7 +21,7 @@ class EmployerMemberNote extends Eloquent {
         
         public function member()
 	{
-		return $this->belongsTo('TJ\Entities\EmployerMember');
+		return $this->belongsTo('TJ\Entities\EmployerMember', 'member_id');
 	}
         
         public function stage()

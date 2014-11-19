@@ -58,10 +58,12 @@ class JobApplicationTest extends TestCase {
                                         "has_managed_others" => 1,
                                         "notice_period" => 1,
                                         "is_registered" => 1,
-                                        "is_subscribed_newsletter" => 0
+                                        "is_subscribed_newsletter" => 0,
+                                        "country_id" => 1
                               ]);
        
-       $job = JobPost::create([  "is_uae_only" => 0,
+       $job = JobPost::create([  "title" => "test job",
+                                 "is_uae_only" => 0,
                                  "description" => "desc test",
                                  "min_education_level_required"    => "level 1",
                                  "min_certification" => "vertif 1",
@@ -74,13 +76,10 @@ class JobApplicationTest extends TestCase {
                                  "status_id" => 1, 
                                  "type_id" => 1]);
        
-       $jobseeker->applyToJob($job);
-       
-       
+        $jobApplication = $jobseeker->applyToJob($job->id); 
+      
+        $savedJobApplication = JobApplication::first();
+
+        $this->assertEquals($jobApplication->getKey(), $savedJobApplication->getKey());
     }
 }
-
-
-
-
-

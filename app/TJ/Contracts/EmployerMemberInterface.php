@@ -1,16 +1,12 @@
-<?php 
+<?php
 
 namespace TJ\Contracts;
 
-interface EmployerMemberInterface { 
-    
+interface EmployerMemberInterface
+{
     public function employer();
-    
-    public function tasks(); 
-    
-    public function notes(); 
-    
-    public function user(); 
-    
-    public function jobPosts(); 
+    public function tasks();
+    public function notes();
+    public function user();
+    public function jobPosts();
 }

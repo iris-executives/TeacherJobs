@@ -6,26 +6,24 @@ use TJ\Entities\EmployerMember;
 use TJ\Entities\EmployerMemberNote;
 use TJ\Entities\EmployerMemberTask;
 
-class EmployerTest extends TestCase {
-
-    
-    
+class EmployerTest extends TestCase
+{
     /**
     * Default preparation for each test
     */
     public function setUp()
-    {  
+    {
         parent::setUp();
         Artisan::call('migrate');
     }
     
     public function test_creating_employer()
-    { 
+    {
         $employer = Employer::create([  "name" => "name test",
                                         "description" => "desc test",
                                         "phone"    => "0411112233",
                                         "address" => "address test",
-                                        "city" => "Dubai", 
+                                        "city" => "Dubai",
                                         "pobox" => "pobox test",
                                         "logo" => "//Path/to/logo"
                                       ]);
@@ -33,7 +31,6 @@ class EmployerTest extends TestCase {
         $savedEmployer = Employer::first();
         
         $this->assertEquals($employer->getKey(), $savedEmployer->getKey());
-        
     }
     
     public function test_creating_member()
@@ -42,7 +39,7 @@ class EmployerTest extends TestCase {
                                         "description" => "desc test",
                                         "phone"    => "0411112233",
                                         "address" => "address test",
-                                        "city" => "Dubai", 
+                                        "city" => "Dubai",
                                         "pobox" => "pobox test",
                                         "logo" => "//Path/to/logo"
                                       ]);
@@ -86,8 +83,6 @@ class EmployerTest extends TestCase {
         $savedNote = $member->notes->first();
 
         $this->assertEquals($note->getKey(), $savedNote->getKey());
-        
-        
     }
     
     public function test_creating_member_task()
@@ -111,13 +106,4 @@ class EmployerTest extends TestCase {
 
         $this->assertEquals($task->getKey(), $savedTask->getKey());
     }
-   
-    /**
-     * @expectedException TJ\Exceptions\InvalidEmployerData
-     */
-    //public function test_fails_creating_employer_with_missing_data()
-    //{
-       //
-    //}
 }
-

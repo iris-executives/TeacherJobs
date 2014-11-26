@@ -2,5 +2,7 @@
 
 namespace TJ\Repositories\Contracts;
 
-interface JobseekerRepositoryInterface extends RepositoryInterface{};
-
+interface JobseekerRepositoryInterface extends RepositoryInterface
+{
+    //
+}

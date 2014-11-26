@@ -11,7 +11,7 @@ class EmployerRepository implements Contracts\Employers\Repositories\EmployerRep
     protected $employer;
     
     public function __construct(EmployerInterface $employer)
-    { 
+    {
         $this->employer = $employer;
     }
     
@@ -22,7 +22,16 @@ class EmployerRepository implements Contracts\Employers\Repositories\EmployerRep
     
     public function update($id, $name, $description, $address, $city, $pobox, $logo)
     {
-        return $this->employer->where($this->employer->getKeyName(), $id)->update(compact('name', 'description', 'address', 'city', 'pobox', 'logo'));
+        return $this->employer->where($this->employer->getKeyName(), $id)->update(
+            compact(
+                'name',
+                'description',
+                'address',
+                'city',
+                'pobox',
+                'logo'
+            )
+        );
     }
     
     public function remove($id)

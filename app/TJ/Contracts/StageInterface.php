@@ -2,11 +2,8 @@
 
 namespace TJ\Contracts;
 
-interface StageInterface { 
-    
+interface StageInterface
+{
     public function parentStage();
-    
-    public function jobApplications(); 
+    public function jobApplications();
 }
-
-

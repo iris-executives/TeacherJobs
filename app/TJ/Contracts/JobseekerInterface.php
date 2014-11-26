@@ -2,13 +2,10 @@
 
 namespace TJ\Contracts;
 
-interface JobseekerInterface { 
-    
+interface JobseekerInterface
+{
     public function user();
-    
-    public function country(); 
-    
-    public function jobApplications(); 
-    
-    public function applyToJob(); 
+    public function country();
+    public function jobApplications();
+    public function applyToJob();
 }

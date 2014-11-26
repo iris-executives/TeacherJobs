@@ -5,8 +5,8 @@ namespace TJ\Entities;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use Eloquent;
 
-class User extends Eloquent {
-
+class User extends Eloquent
+{
     protected $table = 'users';
     protected $user;
     public $timestamps = true;
@@ -18,6 +18,6 @@ class User extends Eloquent {
 
     public function jobAlerts()
     {
-            return $this->hasMany('TJ\Entities\JobAlert');
+        return $this->hasMany('TJ\Entities\JobAlert');
     }
 }

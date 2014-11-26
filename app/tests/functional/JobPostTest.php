@@ -5,20 +5,19 @@ use TJ\Entities\Employer;
 use TJ\Entities\EmployerMember;
 use TJ\Entities\JobPost;
 
-
 class JobPostTest extends TestCase {
   
     /**
     * Default preparation for each test
     */
     public function setUp()
-    {  
+    {
         parent::setUp();
         Artisan::call('migrate');
     }
     
     public function test_posting_job()
-    { 
+    {
         $user = User::create([  "username" => "test1",
                                 "password" => "password",
                                 "email"    => "test1@domain.com",
@@ -36,7 +35,7 @@ class JobPostTest extends TestCase {
                                  "description" => "desc test",
                                  "min_education_level_required"    => "level 1",
                                  "min_certification" => "vertif 1",
-                                 "min_years_experience" => 5, 
+                                 "min_years_experience" => 5,
                                  "location" => "loc",
                                  "contract_type" => "contract type",
                                  "work_timing" => "9-5",
@@ -54,5 +53,3 @@ class JobPostTest extends TestCase {
         $this->assertEquals($job->getKey(), $savedJobPost->getKey());
     }
 }
-
-

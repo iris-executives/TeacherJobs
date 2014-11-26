@@ -9,7 +9,7 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		Eloquent::unguard();              
+		Eloquent::unguard();
                 DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 		$this->call("CountrySeeder");
                 $this->call("UserSeeder");
@@ -19,10 +19,10 @@ class DatabaseSeeder extends Seeder {
                 $this->call("JobCategorySeeder");
                 $this->call("EmployerSeeder");
                 $this->call("JobSeekerSeeder");
-                $this->call("StageSeeder"); 
+                $this->call("StageSeeder");
                 $this->call("JobPostSeeder");
                 $this->call("JobApplicationSeeder");
-                $this->call("JobQuestionSeeder"); 
+                $this->call("JobQuestionSeeder");
                 $this->call("JobApplicationStageSeeder");
                 $this->call("JobAnswerSeeder");
                 $this->call("PermissionSeeder");

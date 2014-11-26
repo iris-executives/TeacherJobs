@@ -1,6 +1,6 @@
 <?php 
 
-namespace TJ\Contracts\EmployerMembers\Repositories;
+namespace TJ\Repositories\Contracts;
 
 interface StageRepositoryInterface extends RepositoryInterface
 {

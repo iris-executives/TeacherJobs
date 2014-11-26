@@ -2,9 +2,8 @@
 
 namespace TJ\Contracts;
 
-interface EmployerMemberTaskInterface { 
-    
+interface EmployerMemberTaskInterface
+{
     public function assigners();
-    
-    public function assagnees(); 
+    public function assagnees();
 }

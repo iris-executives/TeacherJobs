@@ -2,11 +2,9 @@
 
 namespace TJ\Contracts;
 
-interface EmployerMemberNoteInterface { 
-    
+interface EmployerMemberNoteInterface
+{
     public function member();
-    
-    public function stage(); 
-    
-    public function jobApplication(); 
+    public function stage();
+    public function jobApplication();
 }

@@ -2,8 +2,7 @@
 
 namespace TJ\Contracts;
 
-interface EmployerInterface { 
-    
-    public function members(); 
+interface EmployerInterface
+{
+    public function members();
 }
-

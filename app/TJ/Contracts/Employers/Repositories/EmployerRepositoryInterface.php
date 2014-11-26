@@ -1,6 +1,8 @@
 <?php 
 
-namespace TJ\Repositories\Contracts;
+namespace TJ\Contracts\Employers\Repositories;
 
-interface EmployerRepositoryInterface extends RepositoryInterface{};
-
+interface EmployerRepositoryInterface extends RepositoryInterface
+{
+    //
+}

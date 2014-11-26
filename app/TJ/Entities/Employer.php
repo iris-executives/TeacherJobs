@@ -14,7 +14,14 @@ class Employer extends Eloquent {
     use SoftDeletingTrait;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('name', 'description', 'phone', 'address', 'city', 'pobox', 'logo');
+    protected $fillable = array(
+        'name',
+        'description',
+        'phone',
+        'address',
+        'city',
+        'pobox',
+        'logo');
 
     public function members()
     {

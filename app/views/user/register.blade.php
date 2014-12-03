@@ -21,8 +21,7 @@
 			{{ Form::text('surname') }}
 		</li>
 		<li>
-			{{ Form::label('user_role_id', 'User_role_id:') }}
-			{{ Form::text('user_role_id') }}
+			{{ Form::hidden('user_role_id', 2) }} <!-- 1: employer, 2:jobseeker ? -->
 		</li>
 		<li>
 			{{ Form::submit() }}

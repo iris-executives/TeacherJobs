@@ -15,19 +15,21 @@ class TeacherjobsServiceProvider extends ServiceProvider {
      */
     public function register()
     {
+        //Entities
         App::bind('Illuminate\Auth\UserInterface', 'TJ\Entities\User');
-        App::bind('TJ\Contracts\EmployerInterface', 'TJ\Entities\Employer');
-        App::bind('TJ\Contracts\EmployerMemeberInterface', 'TJ\Entities\EmployerMember');
-        App::bind('TJ\Contracts\EmployerMemeberNoteInterface', 'TJ\Entities\EmployerMemberNote');
-        App::bind('TJ\Contracts\EmployerMemeberTaskInterface', 'TJ\Entities\EmployerMemberTask');
-        App::bind('TJ\Contracts\JobseekerInterface', 'TJ\Entities\Jobseeker');
+        App::bind('TJ\Contracts\Employers\EmployerInterface', 'TJ\Entities\Employer');
+        App::bind('TJ\Contracts\EmployerMembers\EmployerMemeberInterface', 'TJ\Entities\EmployerMember');
+        App::bind('TJ\Contracts\EmployerMembers\EmployerMemeberNoteInterface', 'TJ\Entities\EmployerMemberNote');
+        App::bind('TJ\Contracts\EmployerMembers\EmployerMemeberTaskInterface', 'TJ\Entities\EmployerMemberTask');
+        App::bind('TJ\Contracts\Jobseekers\JobseekerInterface', 'TJ\Entities\Jobseeker');
         App::bind('TJ\Contracts\StageInterface', 'TJ\Entities\Stage');
+        //Repos
         App::bind('TJ\Repositories\Contracts\UserRepositoryInterface', 'TJ\Repositories\UserRepository');
-        App::bind('TJ\Repositories\Contracts\EmployerRepositoryInterface', 'TJ\Repositories\EmployerRepository');
-        App::bind('TJ\Repositories\Contracts\EmployerMemberRepositoryInterface', 'TJ\Repositories\EmployerMemberRepository');
-        App::bind('TJ\Repositories\Contracts\JobseekerRepositoryInterface', 'TJ\Repositories\JobseekerRepository');
-        App::bind('TJ\Repositories\Contracts\EmployerMemberNoteRepositoryInterface', 'TJ\Repositories\EmployerMemberNoteRepository');
-        App::bind('TJ\Repositories\Contracts\EmployerMemberTaskRepositoryInterface', 'TJ\Repositories\EmployerMemberTaskRepository');
-        App::bind('TJ\Repositories\Contracts\StageRepositoryInterface', 'TJ\Repositories\StageRepository');
+        App::bind('TJ\Contracts\Employers\EmployerRepositoryInterface', 'TJ\Repositories\EmployerRepository');
+        App::bind('TJ\Contracts\EmployerMembers\EmployerMemberRepositoryInterface', 'TJ\Repositories\EmployerMemberRepository');
+        App::bind('TJ\Contracts\EmployerMembers\EmployerMemberNoteRepositoryInterface', 'TJ\Repositories\EmployerMemberNoteRepository');
+        App::bind('TJ\Contracts\EmployerMembers\EmployerMemberTaskRepositoryInterface', 'TJ\Repositories\EmployerMemberTaskRepository');
+        App::bind('TJ\Contracts\Jobseekers\JobseekerRepositoryInterface', 'TJ\Repositories\JobseekerRepository');
+        App::bind('TJ\Contracts\StageRepositoryInterface', 'TJ\Repositories\StageRepository');
     }
 }

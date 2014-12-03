@@ -1,6 +1,6 @@
 <?php 
 
-namespace TJ\Contracts;
+namespace TJ\Contracts\Jobseekers;
 
 interface JobseekerInterface
 {

@@ -1,5 +1,9 @@
 @extends("layout")
 @section("content")
+@if(Session::has('message'))
+    <p class="alert">{{ Session::get('message') }}</p>
+@endif
+<h2 class="form-signin-heading">Please Login</h2>
   {{ Form::open() }}
     {{ $errors->first("password") }}<br />
     {{ Form::label("username", "Username") }}

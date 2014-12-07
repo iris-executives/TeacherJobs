@@ -48,3 +48,6 @@ label, input {
   float  : left;
   margin : 5px 0;
 }
+ul {
+    list-style: none;
+}

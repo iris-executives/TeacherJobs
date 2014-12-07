@@ -11,9 +11,32 @@ class UserController extends Controller
       //parent::__construct();
     }
     
-    public function register($data)
+    public function register()
     {
-        //UserRepository::create($data);
+        if ($this->isPostRequest()) {
+           
+            $validator = $this->getRegistrationValidator();
+
+            if ($validator->passes()) {
+                $user = new User;
+                $user->username = Input::get('username');
+                $user->email = Input::get('email');
+                $user->password = Hash::make(Input::get('password'));
+                $user->first_name = Input::get('first_name');
+                $user->surname = Input::get('surname');
+                $user->user_role_id = Input::get('user_role_id');
+                $user->save();
+                
+                return Redirect::route("user/login")->with('message', 'Thanks for registering!');
+            } 
+            else {
+                return Redirect::route("user/register")
+                  ->withInput()
+                  ->withErrors($validator);
+            }
+         }
+        
+        return View::make("user/register");
     }
     
     public function login()
@@ -30,7 +53,7 @@ class UserController extends Controller
             }
 
             return Redirect::route("user/login")->withErrors([
-              "password" => ["Credentials invalid."]
+              "password" => ["Invalid Credentials."]
             ]);
             } 
             else {
@@ -47,14 +70,25 @@ class UserController extends Controller
       return Input::server("REQUEST_METHOD") == "POST";
   }
 
+  protected function getRegistrationValidator()
+  {
+    return Validator::make(Input::all(), [
+        "username" => "required|alpha_num|between:4,10",
+        "email" => "required|email|unique:users",
+        "password" => "required|alpha_num|between:6,12",
+        "first_name" => "required|min:2",
+        "surname" => "required|min:2"
+    ]);
+  }
+  
   protected function getLoginValidator()
   {
     return Validator::make(Input::all(), [
-      "username" => "required",
-      "password" => "required"
+        "username" => "required",
+        "password" => "required"
     ]);
   }
-
+  
   protected function getLoginCredentials()
   {
     return [

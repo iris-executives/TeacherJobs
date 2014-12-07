@@ -11,6 +11,9 @@ class UserController extends Controller
       //parent::__construct();
     }
     
+    /* 
+     * Registration method
+     */
     public function register()
     {
         if ($this->isPostRequest()) {

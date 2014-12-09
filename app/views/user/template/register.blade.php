@@ -1,7 +1,7 @@
 @extends("layout/main")
 @section("content")
 <h1>User Registration</h1>
-{{ Form::open(array('route' => 'user/register', 'method' => 'POST')) }}
+{{ Form::open(array('route' => 'user/template/register', 'method' => 'POST')) }}
     <p>
         @if (Session::get("error"))
         <ul>  

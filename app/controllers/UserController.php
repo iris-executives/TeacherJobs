@@ -26,10 +26,10 @@ class UserController extends Controller
 
             $this->users->create($username, $email, $password, $first_name, $surname, $user_role_id);
 
-            return Redirect::route("user/login")->with('message', 'Thanks for registering!');
+            return Redirect::route("user/template/login")->with('message', 'Thanks for registering!');
         } 
         else {
-            return Redirect::route("user/register")
+            return Redirect::route("user/template/register")
               ->withInput()
               ->withErrors($validator);
         }
@@ -43,15 +43,15 @@ class UserController extends Controller
             $credentials = $this->getLoginCredentials();
 
             if (Auth::attempt($credentials)) {
-              return Redirect::route("user/profile");
+              return Redirect::route("user/template/profile");
             }
 
-            return Redirect::route("user/login")->withErrors([
+            return Redirect::route("user/template/login")->withErrors([
               "password" => ["Invalid Credentials."]
             ]);
         } 
         else {
-            return Redirect::route("user/login")
+            return Redirect::route("user/template/login")
             ->withInput()
             ->withErrors($validator);
         }
@@ -91,17 +91,17 @@ class UserController extends Controller
 
     public function profileView()
     {
-      return View::make("user/profile");
+      return View::make("user/template/profile");
     }
     
     public function loginView()
     {
-      return View::make("user/login");
+      return View::make("user/template/login");
     }
     
     public function registerView()
     {
-      return View::make("user/register");
+      return View::make("user/template/register");
     }
 
     public function request()
@@ -110,16 +110,16 @@ class UserController extends Controller
         $response = $this->getPasswordRemindResponse();
 
         if ($this->isInvalidUser($response)) {
-          return Redirect::route("user/request")
+          return Redirect::route("user/template/request")
             ->withInput()
             ->with("error", Lang::get($response));
         }
 
-        return Redirect::route("user/request")
+        return Redirect::route("user/template/request")
           ->with("status", Lang::get($response));
       }
 
-      return View::make("user/request");
+      return View::make("user/template/request");
     }
 
     protected function getPasswordRemindResponse()
@@ -144,15 +144,15 @@ class UserController extends Controller
         $response = $this->resetPassword($credentials);
 
         if ($response === Password::PASSWORD_RESET) {
-          return Redirect::route("user/profile");
+          return Redirect::route("user/template/profile");
         }
 
-        return Redirect::route("user/login")
+        return Redirect::route("user/template/login")
           ->withInput()
           ->with("error", Lang::get($response));
       }
 
-      return View::make("user/reset", compact("token"));
+      return View::make("user/template/reset", compact("token"));
     }
 
     protected function resetPassword($credentials)
@@ -167,6 +167,6 @@ class UserController extends Controller
     {
       Auth::logout();
 
-      return Redirect::route("user/login");
+      return Redirect::route("user/template/login");
     }
 }

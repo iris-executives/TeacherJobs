@@ -6,17 +6,17 @@
           Home
         </a>
         @if (Auth::check())
-        <a href="{{ URL::route("user/logout") }}">
+        <a href="{{ URL::route("user/template/logout") }}">
           logout
         </a> |
-        <a href="{{ URL::route("user/profile") }}">
+        <a href="{{ URL::route("user/template/profile") }}">
           profile
         </a>
       @else
-        <a href="{{ URL::route("user/login") }}">
+        <a href="{{ URL::route("user/template/login") }}">
           login
         </a>
-        <a href="{{ URL::route("user/register") }}">
+        <a href="{{ URL::route("user/template/register") }}">
           register
         </a>
       @endif 

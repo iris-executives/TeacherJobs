@@ -6,12 +6,12 @@ Route::get('/', function()
 });
 
 Route::get("/login", [
-  "as"   => "user/login",
+  "as"   => "user/template/login",
   "uses" => "UserController@loginView"
 ]);
 
 Route::get("/register", [
-  "as"   => "user/register",
+  "as"   => "user/template/register",
   "uses" => "UserController@registerView"
 ]);
 
@@ -28,23 +28,23 @@ Route::post("register", [
 Route::group(["before" => "auth"], function() {
 
   Route::get("/profile", [
-    "as"   => "user/profile",
+    "as"   => "user/template/profile",
     "uses" => "UserController@profile"
   ]);
 
   Route::get("/logout", [
-    "as"   => "user/logout",
+    "as"   => "user/template/logout",
     "uses" => "UserController@logout"
   ]);
 
 });
 
 Route::get("/request", [
-  "as"   => "user/request",
+  "as"   => "user/template/request",
   "uses" => "UserController@request"
 ]);
 
 Route::get("/reset/{token}", [
-  "as"   => "user/reset",
+  "as"   => "user/template/reset",
   "uses" => "UserController@reset"
 ]);

@@ -1,5 +1,10 @@
 <?php
 
+Route::get('/', function()
+{
+  return View::make('home');
+});
+
 Route::get("/login", [
   "as"   => "user/login",
   "uses" => "UserController@loginView"

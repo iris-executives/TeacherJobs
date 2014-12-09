@@ -6,12 +6,12 @@
     <title>Teacher Jobs</title>
   </head>
   <body>
-    @include("header")
+    @include("layout/header")
     <div class="content">
       <div class="container">
         @yield("content")
       </div>
     </div>
-    @include("footer")
+    @include("layout/footer")
   </body>
 </html>

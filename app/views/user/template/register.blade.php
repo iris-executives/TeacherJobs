@@ -1,4 +1,4 @@
-@extends("layout")
+@extends("layout/main")
 @section("content")
 <h1>User Registration</h1>
 {{ Form::open(array('route' => 'user/register', 'method' => 'POST')) }}

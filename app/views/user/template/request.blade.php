@@ -1,4 +1,4 @@
-@extends("layout")
+@extends("layout/main")
 @section("content")
   {{ Form::open() }}
     @if (Session::get("error"))

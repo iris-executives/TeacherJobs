@@ -1,12 +1,22 @@
 <?php
 
-Route::any("/login", [
+Route::get("/login", [
   "as"   => "user/login",
+  "uses" => "UserController@loginView"
+]);
+
+Route::get("/register", [
+  "as"   => "user/register",
+  "uses" => "UserController@registerView"
+]);
+
+Route::post("login", [
+  "as"   => "",
   "uses" => "UserController@login"
 ]);
 
-Route::any("/register", [
-  "as"   => "user/register",
+Route::post("register", [
+  "as"   => "",
   "uses" => "UserController@register"
 ]);
 
